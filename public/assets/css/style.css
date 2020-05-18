@@ -1,3 +1,8 @@
+img{
+  height: 200px;
+  width: 200px;
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -16,4 +21,8 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.add-burger{
+  margin-bottom: 50px;
 }

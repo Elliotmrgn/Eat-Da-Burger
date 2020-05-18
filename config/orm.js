@@ -25,12 +25,10 @@ const objToSql = (ob) => {
     var value = ob[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(ob, key)) {
-      // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
+      // if string with spaces, add quotations
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -40,9 +38,9 @@ const objToSql = (ob) => {
 }
 
 // Object for all our SQL statement functions.
-var orm = {
+const orm = {
   all: (tableInput, cb) => {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+    let queryString = `SELECT * FROM ${tableInput};`;
     connection.query(queryString, (err, result)=> {
       if (err) {
         throw err;
@@ -61,7 +59,6 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
   update: function(table, objColVals, condition, cb) {
     let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
 
@@ -87,5 +84,5 @@ var orm = {
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model
 module.exports = orm;
