@@ -1,3 +1,11 @@
+html, body, header, div{
+  background-color: bisque !important;
+}
+
+h2{
+  text-align: center;
+}
+
 img{
   height: 200px;
   width: 200px;
@@ -6,18 +14,19 @@ img{
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
+  background: rgb(189, 157, 241);
+  overflow-wrap: break-word;
+}
+
+.devour-btn{
+  height:24px !important;
+  line-height: 1em !important;
 }
 
 .label {
   font-weight: bold;
 }
 
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
 
 .form-group {
   margin-bottom: 5px;
