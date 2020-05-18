@@ -59,7 +59,7 @@ const orm = {
       cb(result);
     });
   },
-  update: function(table, objColVals, condition, cb) {
+  update: (table, objColVals, condition, cb) => {
     let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
 
     console.log(queryString);
@@ -71,7 +71,7 @@ const orm = {
       cb(result);
     });
   },
-  delete: function(table, condition, cb) {
+  delete: (table, condition, cb) => {
     let queryString = `DELETE FROM ${table} WHERE ${condition}`;
 
     connection.query(queryString, (err, result)=> {
