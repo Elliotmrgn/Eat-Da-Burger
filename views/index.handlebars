@@ -12,7 +12,8 @@
         {{#unless devoured}}
         <li>
           {{name}}
-          <button class="devour-btn btn btn-success btn-sm float-right" data-id="{{id}}" data-devoured="{{devoured}}">DEVOUR!!</button>
+          <button class="devour-btn btn btn-success btn-sm float-right" data-id="{{id}}"
+            data-devoured="{{devoured}}">DEVOUR!</button>
         </li>
         {{/unless}}
         {{/each}}
@@ -26,6 +27,7 @@
         {{#if devoured}}
         <li>
           {{name}}
+          <button class="delete-btn btn btn-danger btn-sm float-right" data-id="{{id}}">DELETE!</button>
         </li>
         {{/if}}
         {{/each}}
